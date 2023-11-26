@@ -13,7 +13,7 @@ const computerNumber = numberGenerator(1,5);
 const som = userNumber + computerNumber;
 
 if (userOddOrEven === 'odd') {
-    if (oddOrEven(som) === pari) {
+    if (oddOrEven(som) === 'pari') {
         console.log (`Pari, ha vinto il player ${userName}`)
     } else if (oddOrEven(som) === 'dispari') {
         console.log ('Dispari, ha vinto il computer');
@@ -29,8 +29,8 @@ function numberGenerator(numeroMassimo, numeroMinimo) {
 };
 function oddOrEven (x) {
     if (x % 2 === 0) {
-        return pari;
-    } else if (x % 2 === 1) {
-        return dispari;
+        return 'pari';
+    } else {
+        return 'dispari';
     }
 }
