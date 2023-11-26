@@ -10,13 +10,22 @@ const userNumber = parseInt(prompt('Write a number between 1 and 5'));
 const computerNumber = numberGenerator(1,5);
 
 
+console.log (`The number chosen by player ${userName} is:`, userNumber, ',', userOddOrEven);
+console.log ('Number of computer is:', computerNumber);
+
 const som = userNumber + computerNumber;
 
 if (userOddOrEven === 'odd') {
-    if (oddOrEven(som) === 'pari') {
-        console.log (`Pari, ha vinto il player ${userName}`)
-    } else if (oddOrEven(som) === 'dispari') {
-        console.log ('Dispari, ha vinto il computer');
+    if (oddOrEven(som) === 'odd') {
+        console.log (`Odd, player ${userName} wins`);
+    } else if (oddOrEven(som) === 'even') {
+        console.log ('Even, computer wins');
+    }
+} else if (userOddOrEven === 'even') {
+    if (oddOrEven(som) === 'odd') {
+        console.log (`Odd, computer wins`);
+    } else if (oddOrEven(som) === 'even') {
+        console.log ('Even, player ${userName} wins');
     }
 }
 
@@ -29,8 +38,8 @@ function numberGenerator(numeroMassimo, numeroMinimo) {
 };
 function oddOrEven (x) {
     if (x % 2 === 0) {
-        return 'pari';
+        return 'odd';
     } else {
-        return 'dispari';
+        return 'even';
     }
 }
